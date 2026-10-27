@@ -4,15 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EcoRecicla: aprende a reciclar y registra tus materiales reciclables.">
+
+  <meta name="description"
+        content="EcoRecicla: registra y organiza tus materiales reciclables.">
+
   <title>EcoRecicla | Cuidemos el planeta</title>
+
+  <!-- Archivo de estilos -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Archivos JavaScript -->
   <script src="js/validation.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
+
 <body>
+
+  <!-- ENCABEZADO -->
   <header class="encabezado">
     <a class="logo" href="#inicio">♻️ EcoRecicla</a>
+
     <nav aria-label="Navegación principal">
       <a href="#inicio">Inicio</a>
       <a href="#categorias">Categorías</a>
@@ -22,66 +33,95 @@
   </header>
 
   <main>
+
+    <!-- PORTADA -->
     <section class="hero" id="inicio">
       <div class="hero-contenido">
         <p class="etiqueta">UN PLANETA, UNA RESPONSABILIDAD</p>
+
         <h1>¡Reciclar hoy es cuidar nuestro mañana!</h1>
+
         <p>
           Pequeñas acciones pueden generar grandes cambios.
-          Clasifica tus residuos y comienza a construir un futuro más limpio.
+          Clasifica tus residuos y registra tu contribución
+          para construir un futuro más limpio.
         </p>
+
         <a class="boton" href="#registro">Registrar material</a>
       </div>
+
       <div class="hero-icono" aria-hidden="true">🌎</div>
     </section>
 
+    <!-- CATEGORÍAS -->
     <section class="seccion" id="categorias">
       <div class="titulo-seccion">
         <p class="etiqueta">APRENDE A CLASIFICAR</p>
         <h2>¿Qué podemos reciclar?</h2>
-        <p>Identifica cada material y deposítalo correctamente.</p>
+        <p>Selecciona la categoría correcta para cada material.</p>
       </div>
 
       <div class="categorias">
+
         <article class="tarjeta">
-          <div class="icono">🧴</div>
+          <div class="icono" aria-hidden="true">🧴</div>
           <h3>Plástico</h3>
           <p>Botellas, envases y recipientes plásticos limpios.</p>
         </article>
+
         <article class="tarjeta">
-          <div class="icono">📦</div>
+          <div class="icono" aria-hidden="true">📦</div>
           <h3>Papel y cartón</h3>
           <p>Cajas, periódicos, revistas y hojas de papel.</p>
         </article>
+
         <article class="tarjeta">
-          <div class="icono">🍾</div>
+          <div class="icono" aria-hidden="true">🍾</div>
           <h3>Vidrio</h3>
-          <p>Frascos y botellas de vidrio, separados con cuidado.</p>
+          <p>Frascos y botellas de vidrio separados con cuidado.</p>
         </article>
+
         <article class="tarjeta">
-          <div class="icono">🥫</div>
+          <div class="icono" aria-hidden="true">🥫</div>
           <h3>Metal</h3>
-          <p>Latas de aluminio y envases metálicos vacíos.</p>
+          <p>Latas de aluminio y recipientes metálicos vacíos.</p>
         </article>
+
       </div>
     </section>
 
+    <!-- FORMULARIO DE REGISTRO -->
     <section class="seccion registro-seccion" id="registro">
+
       <div class="titulo-seccion">
         <p class="etiqueta">CADA ACCIÓN CUENTA</p>
-        <h2>Registra tus materiales</h2>
-        <p>Completa los datos para llevar el control de tus materiales reciclables.</p>
+        <h2>Registrar materiales</h2>
+        <p>
+          Completa el formulario para agregar un material
+          a tu lista de reciclaje.
+        </p>
       </div>
 
       <form id="formulario-reciclaje" class="formulario">
+
         <div class="campo">
           <label for="nombre">Nombre del material</label>
-          <input id="nombre" name="nombre" type="text"
-                 maxlength="60" placeholder="Ej. Botellas de agua" required>
+
+          <input
+            id="nombre"
+            name="nombre"
+            type="text"
+            minlength="2"
+            maxlength="60"
+            placeholder="Ej. Botellas de agua"
+            autocomplete="off"
+            required
+          >
         </div>
 
         <div class="campo">
-          <label for="categoria">Categoría</label>
+          <label for="categoria">Categoría del material</label>
+
           <select id="categoria" name="categoria" required>
             <option value="">Selecciona una categoría</option>
             <option value="Plástico">Plástico</option>
@@ -93,39 +133,107 @@
 
         <div class="campo">
           <label for="cantidad">Cantidad de unidades</label>
-          <input id="cantidad" name="cantidad" type="number"
-                 min="1" max="10000" step="1" placeholder="Ej. 5" required>
+
+          <input
+            id="cantidad"
+            name="cantidad"
+            type="number"
+            min="1"
+            max="10000"
+            step="1"
+            placeholder="Ej. 5"
+            required
+          >
         </div>
 
-        <button class="boton" type="submit">Guardar registro</button>
-        <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+        <button class="boton" type="submit">
+          Guardar registro
+        </button>
+
+        <p
+          id="mensaje"
+          class="mensaje"
+          role="status"
+          aria-live="polite"
+        ></p>
+
       </form>
     </section>
 
+    <!-- LISTA DE MATERIALES REGISTRADOS -->
     <section class="seccion" id="registros">
+
       <div class="titulo-seccion">
         <p class="etiqueta">TU CONTRIBUCIÓN</p>
-        <h2>Mis registros</h2>
-        <p>Consulta los materiales que has registrado.</p>
+        <h2>Materiales registrados</h2>
+        <p>
+          Aquí aparecerán los materiales que hayas guardado.
+        </p>
       </div>
 
+      <!-- RESUMEN DEL TOTAL DE REGISTROS -->
       <div class="resumen">
-        <span>Total de registros</span>
+        <span>Total de registros guardados</span>
         <strong id="total-registros">0</strong>
       </div>
 
-      <div id="lista-registros" class="lista-registros">
-        <p class="vacio">Todavía no has registrado materiales.</p>
+      <!-- RESUMEN POR CATEGORÍA -->
+      <div class="categorias" id="resumen-categorias">
+
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🧴</div>
+          <h3>Plástico</h3>
+          <p><strong id="total-plastico">0</strong> unidades</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">📦</div>
+          <h3>Papel y cartón</h3>
+          <p><strong id="total-papel">0</strong> unidades</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🍾</div>
+          <h3>Vidrio</h3>
+          <p><strong id="total-vidrio">0</strong> unidades</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🥫</div>
+          <h3>Metal</h3>
+          <p><strong id="total-metal">0</strong> unidades</p>
+        </article>
+
       </div>
 
-      <button id="limpiar-registros" class="boton boton-secundario"
-              type="button">Eliminar todos los registros</button>
+      <!-- AQUÍ JAVASCRIPT MOSTRARÁ LOS REGISTROS -->
+      <div
+        id="lista-registros"
+        class="lista-registros"
+        aria-live="polite"
+      >
+        <p class="vacio">
+          Todavía no has registrado materiales.
+        </p>
+      </div>
+
+      <button
+        id="limpiar-registros"
+        class="boton boton-secundario"
+        type="button"
+      >
+        Eliminar todos los registros
+      </button>
+
     </section>
+
   </main>
 
+  <!-- PIE DE PÁGINA -->
   <footer class="pie">
     <p>♻️ EcoRecicla — Cuidar el planeta es tarea de todos.</p>
     <p>Proyecto educativo de desarrollo de software.</p>
   </footer>
+
 </body>
 </html>
